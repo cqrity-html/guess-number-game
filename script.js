@@ -3,6 +3,7 @@
 const resetButton = document.querySelector(".again");
 const numberInput = document.querySelector(".number-input");
 const checkButton = document.querySelector(".check");
+const mainHeading = document.querySelector('.main-heading');
 let guessMessage = document.querySelector(".guess-message");
 let question = document.querySelector(".question");
 let scorePoints = document.querySelector(".score");
@@ -19,6 +20,7 @@ const playGame = function () {
         guessMessage.textContent = "Введите число!";
     } else if (score > 1 && guessingNumber === secretNumber) {
         guessMessage.textContent = "Правильно!";
+        mainHeading.textContent = "Угадал!!!"
         question.textContent = secretNumber;
         if (highScore < score) {
             highScore = score
@@ -44,6 +46,7 @@ const playGame = function () {
 const resetGame = function () {
     question.textContent = "???";
     guessMessage.textContent = "Начни угадывать";
+    mainHeading.textContent = 'Угадай Число!';
     score = 20;
     scorePoints.textContent = score;
     document.body.style.backgroundColor = "rgb(0, 0, 0)";
